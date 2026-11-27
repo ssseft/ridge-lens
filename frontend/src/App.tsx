@@ -29,13 +29,7 @@ function TrailMap({ mountain }: { mountain: Mountain | undefined }) {
     view.current = mapView;
     const map = new Map({
       target: target.current,
-      layers: [
-        new TileLayer({
-          source: new OSM({
-            url: import.meta.env.VITE_OSM_TILE_URL || undefined,
-          }),
-        }),
-      ],
+      layers: [new TileLayer({ source: new OSM() })],
       view: mapView,
       controls: defaultControls({ attributionOptions: { collapsible: false } }),
     });
