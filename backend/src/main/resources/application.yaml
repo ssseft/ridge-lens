@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ridge-lens
+  datasource:
+    url: ${RIDGELENS_DB_URL}
+    username: ${RIDGELENS_DB_USER}
+    password: ${RIDGELENS_DB_PASSWORD}
+  flyway:
+    enabled: true
+server:
+  port: 8080
