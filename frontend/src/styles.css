@@ -1,0 +1,135 @@
+:root {
+  font-family: system-ui, 'Malgun Gothic', sans-serif;
+  color: #202d27;
+  background: #f5f7f4;
+  font-synthesis: none;
+  --line: #d8e1d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(17rem, 22rem) minmax(0, 1fr);
+  grid-template-rows: auto minmax(28rem, 1fr);
+  min-height: 100dvh;
+}
+
+.masthead {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: #193629;
+  color: #fff;
+}
+
+.wordmark {
+  font-weight: 750;
+  font-size: 1.25rem;
+}
+.subtitle {
+  color: #d5e5d9;
+  font-size: 0.875rem;
+}
+
+.sidebar {
+  background: #f5f7f4;
+  padding: 2rem 1.5rem;
+  border-inline-end: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0 0 2rem;
+  font-size: 1.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.field label {
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.select-wrap {
+  position: relative;
+}
+.select-wrap::after {
+  content: '';
+  position: absolute;
+  inset: calc(50% - 0.25rem) 1rem auto auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: solid #315b45;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.field select,
+.field input {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  font: inherit;
+  color: inherit;
+  background: white;
+}
+
+.field select {
+  appearance: none;
+  padding-inline-end: 2.25rem;
+}
+.field select:disabled {
+  background: #edf1ed;
+}
+.status {
+  font-size: 0.875rem;
+  color: #43574c;
+}
+.status:empty {
+  display: none;
+}
+.map-shell {
+  display: grid;
+  background: #dce8dc;
+}
+.map {
+  min-width: 0;
+}
+:focus-visible {
+  outline: 2px solid #2f7250;
+  outline-offset: 2px;
+}
+.map:focus-visible {
+  outline-offset: -3px;
+}
+
+@media (max-width: 42rem) {
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(24rem, 1fr);
+  }
+  .sidebar {
+    padding: 1.25rem 1rem;
+    border-inline-end: 0;
+  }
+  h1 {
+    margin-bottom: 1rem;
+  }
+  .field:last-child {
+    margin-bottom: 0;
+  }
+}
